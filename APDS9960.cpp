@@ -2,9 +2,11 @@
 
 // APDS9960 I2C address and register addresses
 #define APDS9960_I2C_ADDR 0x39
+
 #define APDS9960_ID 0x92
 #define EXPECTED_ID_1 0xAB
 #define EXPECTED_ID_2 0xA8
+
 #define APDS9960_ENABLE 0x80
 #define APDS9960_PDATA 0x9C
 #define APDS9960_CONTROL 0x8F
@@ -36,17 +38,17 @@ bool APDS9960::test() {
 
 bool APDS9960::init() {
     if (!test()) {
-        hwlib::cout << "Failed to detect APDS9960." << hwlib::endl;
+        hwlib::cout << "BOOOO!" << hwlib::endl;
         return false;
     }
 
-    writeByte(APDS9960_CONTROL, 0x05); // Set proximity gain (8x)
-    writeByte(APDS9960_PILT, 0); // Set proximity interrupt low threshold
-    writeByte(APDS9960_PIHT, 255); // Set proximity interrupt high threshold
-    writeByte(APDS9960_PPULSE, 0x87); // Set proximity pulse count and length (16 pulses, 32us pulse length)
-    writeByte(APDS9960_ENABLE, 0x05); // Enable proximity sensing (PON | PEN)
+    writeByte(APDS9960_CONTROL, 0x05); 
+    writeByte(APDS9960_PILT, 0);
+    writeByte(APDS9960_PIHT, 255); 
+    writeByte(APDS9960_PPULSE, 0x87);
+    writeByte(APDS9960_ENABLE, 0x05); 
 
-    hwlib::cout << "APDS-9960 initialized successfully!" << hwlib::endl;
+    hwlib::cout << "HUZZAH" << hwlib::endl;
     return true;
 }
 
