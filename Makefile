@@ -12,7 +12,7 @@
 SOURCES := APDS9960.cpp
 
 # header files in this project
-HEADERS := APDS9960.hpp
+HEADERS := APDS9960.hpp MyServo.hpp
 
 # other places to look for files for this project
 SEARCH  := 
